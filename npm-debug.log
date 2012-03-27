@@ -1,0 +1,28 @@
+info it worked if it ends with ok
+verbose cli [ 'node',
+verbose cli   '/usr/local/bin/npm',
+verbose cli   '--global',
+verbose cli   'run-script',
+verbose cli   'pow',
+verbose cli   'restart' ]
+info using npm@1.1.0-2
+info using node@v0.6.8
+verbose config file /Users/rajib/.npmrc
+verbose config file /usr/local/etc/npmrc
+verbose config file /usr/local/lib/node_modules/npm/npmrc
+ERR! Error: ENOENT, no such file or directory '/usr/local/lib/node_modules/pow/package.json'
+ERR! You may report this log at:
+ERR!     <http://github.com/isaacs/npm/issues>
+ERR! or email it to:
+ERR!     <npm-@googlegroups.com>
+ERR! 
+ERR! System Darwin 10.8.0
+ERR! command "node" "/usr/local/bin/npm" "--global" "run-script" "pow" "restart"
+ERR! cwd /Users/rajib/Others/rails_3/propapp
+ERR! node -v v0.6.8
+ERR! npm -v 1.1.0-2
+ERR! path /usr/local/lib/node_modules/pow/package.json
+ERR! code ENOENT
+ERR! message ENOENT, no such file or directory '/usr/local/lib/node_modules/pow/package.json'
+ERR! errno {}
+verbose exit [ 1, true ]
