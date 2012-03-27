@@ -1,0 +1,38 @@
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => 'form-horizontal' }) do |f| %>
+  <%= devise_error_messages! %>
+  <fieldset>
+    <legend>Sign in</legend>
+  
+    <div class="control-group">
+      <%= f.label :email, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.email_field :email %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :password, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.password_field :password %>
+      </div>
+    </div>
+    
+    <div class="control-group">
+      <%= f.label :remember_me, :class => "control-label" %>
+      <div class="controls">
+        <% if devise_mapping.rememberable? -%>
+          <label class="checkbox">
+            <%= f.check_box :remember_me %> 
+          </label>
+        <% end -%>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit "Sign in", :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', "/", :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>
+
+<%= render "links" %>

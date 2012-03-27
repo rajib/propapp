@@ -1,14 +1,6 @@
-#notice {
-  color: green; }
-
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table; }
-
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 1px solid #B94A48;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
@@ -20,7 +12,7 @@
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #c00;
+    background-color: #B94A48;
     color: #fff; }
   ul li {
     font-size: 12px;
