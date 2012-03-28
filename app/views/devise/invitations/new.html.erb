@@ -1,0 +1,20 @@
+<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post, :class => 'form-horizontal'} do |f| %>
+  <%= devise_error_messages! %>
+  <fieldset>
+    <legend>Send invitation</legend>
+
+    <div class="control-group">
+      <%= f.label :email, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.email_field :email %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit "Send an invitation", :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', :back, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>
+
+<%= link_to "Back", :back %><br />
