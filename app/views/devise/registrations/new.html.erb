@@ -6,7 +6,7 @@
     <div class="control-group">
       <%= f.label :email, :class => 'control-label' %>
       <div class="controls">
-        <%= f.email_field :email, :class => "input-xlarge" %>
+        <%= f.email_field :email %>
       </div>
     </div>
 
@@ -27,7 +27,7 @@
 
     <div class="form-actions">
       <%= f.submit "Sign up", :class => 'btn btn-primary' %>
-      <%= link_to 'Cancel', "/", :class => 'btn' %>
+      <%= link_to 'Cancel', home_link, :class => 'btn' %>
     </div>
   </fieldset>
 <% end %>

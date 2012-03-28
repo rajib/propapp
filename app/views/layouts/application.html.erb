@@ -21,28 +21,12 @@
     <link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
   </head>
   <body>
-
+    
     <%= render :partial => "layouts/global_nav" %>
-
+    
     <div class="container">
       <div class="content">
-        
-        <% if flash[:alert] %>
-          <div class="alert alert-error">
-            <a class="close" data-dismiss="alert">×</a>
-            <strong>Oh snap!</strong>
-            <%= flash[:alert] %>
-          </div>
-        <% end %>
-        
-        <% if flash[:notice] %>
-          <div class="alert alert-success">
-            <a class="close" data-dismiss="alert">×</a>
-            <strong>Well done!</strong>
-            <%= flash[:notice] %>
-          </div>
-        <% end %>
-        
+        <%= render :partial => "layouts/flash_messages" %>
         <div class="row">
            <div class="span9">
               <%= yield %>
@@ -56,7 +40,6 @@
       <footer>
         <p>&copy; <%= t(:copyright_name) %></p>
       </footer>
-
     </div> <!-- /container -->
 
     <!-- Le javascript

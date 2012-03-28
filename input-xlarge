@@ -1,0 +1,43 @@
+app/views/devise/passwords/edit.html.erb:1:<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put, :class => 'form-horizontal' }) do |f| %>
+app/views/devise/passwords/edit.html.erb:8:      <%= f.label :password, "New password", :class => 'control-label' %>
+app/views/devise/passwords/edit.html.erb:15:      <%= f.label :password_confirmation, "Confirm new password", :class => 'control-label' %>
+app/views/devise/passwords/edit.html.erb:23:      <%= f.submit "Change my password", :class => 'btn btn-primary' %>
+app/views/devise/passwords/edit.html.erb:24:      <%= link_to 'Cancel', "/", :class => 'btn' %>
+app/views/devise/passwords/new.html.erb:1:<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => 'form-horizontal' }) do |f| %>
+app/views/devise/passwords/new.html.erb:7:      <%= f.label :email, :class => 'control-label' %>
+app/views/devise/passwords/new.html.erb:9:        <%= f.email_field :email, :class => "input-xlarge" %>
+app/views/devise/passwords/new.html.erb:14:      <%= f.submit "Send me reset password instructions", :class => 'btn btn-primary' %>
+app/views/devise/passwords/new.html.erb:15:      <%= link_to 'Cancel', "/", :class => 'btn' %>
+app/views/devise/registrations/edit.html.erb:2::html => { :method => :put, :class => 'form-horizontal' }) do |f| %>
+app/views/devise/registrations/edit.html.erb:9:      <%= f.label :email, :class => 'control-label' %>
+app/views/devise/registrations/edit.html.erb:16:      <%= f.label :password, :class => 'control-label' %>
+app/views/devise/registrations/edit.html.erb:24:      <%= f.label :password_confirmation, :class => 'control-label' %>
+app/views/devise/registrations/edit.html.erb:31:      <%= f.label :current_password, :class => 'control-label' %>
+app/views/devise/registrations/edit.html.erb:39:      <%= f.submit "Update", :class => 'btn btn-primary' %>
+app/views/devise/registrations/edit.html.erb:40:      <%= link_to 'Cancel', :back, :class => 'btn' %>
+app/views/devise/registrations/new.html.erb:1:<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => 'form-horizontal' }) do |f| %>
+app/views/devise/registrations/new.html.erb:7:      <%= f.label :email, :class => 'control-label' %>
+app/views/devise/registrations/new.html.erb:14:      <%= f.label :password, :class => 'control-label' %>
+app/views/devise/registrations/new.html.erb:21:      <%= f.label :password_confirmation, :class => 'control-label' %>
+app/views/devise/registrations/new.html.erb:29:      <%= f.submit "Sign up", :class => 'btn btn-primary' %>
+app/views/devise/registrations/new.html.erb:30:      <%= link_to 'Cancel', home_link, :class => 'btn' %>
+app/views/devise/sessions/new.html.erb:1:<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => 'form-horizontal' }) do |f| %>
+app/views/devise/sessions/new.html.erb:7:      <%= f.label :email, :class => 'control-label' %>
+app/views/devise/sessions/new.html.erb:14:      <%= f.label :password, :class => 'control-label' %>
+app/views/devise/sessions/new.html.erb:21:      <%= f.label :remember_me, :class => "control-label" %>
+app/views/devise/sessions/new.html.erb:32:      <%= f.submit "Sign in", :class => 'btn btn-primary' %>
+app/views/devise/sessions/new.html.erb:33:      <%= link_to 'Cancel', "/", :class => 'btn' %>
+app/views/layouts/_global_nav.erb:9:      <%= link_to "Propapp", home_link, :class => "brand" %>
+app/views/props/_form.html.erb:1:<%= form_for @prop, :html => { :class => 'form-horizontal' } do |f| %>
+app/views/props/_form.html.erb:6:      <%= f.label :title, :class => 'control-label' %>
+app/views/props/_form.html.erb:8:        <%= f.text_field :title, :class => 'text_field' %>
+app/views/props/_form.html.erb:13:      <%= f.label :description, :class => 'control-label' %>
+app/views/props/_form.html.erb:15:        <%= f.text_field :description, :class => 'text_field' %>
+app/views/props/_form.html.erb:20:      <%= f.submit nil, :class => 'btn btn-primary' %>
+app/views/props/_form.html.erb:21:      <%= link_to 'Cancel', props_path, :class => 'btn' %>
+app/views/props/index.html.erb:16:          <%= link_to 'Edit', edit_prop_path(prop), :class => 'btn btn-mini' %>
+app/views/props/index.html.erb:17:          <%= link_to 'Destroy', prop_path(prop), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+app/views/props/index.html.erb:24:<%= link_to 'New', new_prop_path, :class => 'btn btn-primary' %>
+app/views/props/show.html.erb:14:  <%= link_to 'Back', props_path, :class => 'btn'  %>
+app/views/props/show.html.erb:15:  <%= link_to 'Edit', edit_prop_path(@prop), :class => 'btn' %>
+app/views/props/show.html.erb:16:  <%= link_to 'Delete', prop_path(@prop), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
