@@ -69,3 +69,4 @@ gem "devise_invitable", ">= 1.0.0"
 gem "twitter-bootstrap-rails", ">= 2.0.3", :group => :assets
 gem "rails-footnotes", ">= 3.7", :group => :development
 gem "powder", :group => :development
+gem "git_remote_branch", :group => :development
