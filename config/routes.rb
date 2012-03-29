@@ -4,6 +4,12 @@ Propapp::Application.routes.draw do
   end
 
   resources :props
+  
+  namespace :settings do
+    resource :account, :only => [:edit, :update]
+    resource :password, :only => [:edit, :update]
+    resource :profile, :only => [:edit, :update]
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

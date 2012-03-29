@@ -1,0 +1,19 @@
+<ul class="nav nav-tabs nav-stacked">
+  <%= content_tag :li, :class => nav_class(edit_settings_account_path) do -%>
+    <%= link_to  edit_settings_account_path  do %> 
+      Account <!-- <i class="icon-chevron-right"></i> -->
+    <% end %>
+  <% end -%>
+  <li>
+    <%= content_tag :li, :class => nav_class(edit_settings_password_path) do -%>
+      <%= link_to  edit_settings_password_path  do %> 
+        Password <!-- <i class="icon-chevron-right"></i> -->
+      <% end %>
+    <% end -%>
+  </li>
+  <li>
+    <a href="#">
+      Profile <!-- <i class="icon-chevron-right"></i> -->
+    </a>
+  </li>
+</ul>
