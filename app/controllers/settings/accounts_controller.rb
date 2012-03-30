@@ -7,13 +7,11 @@ class Settings::AccountsController < Settings::BaseController
   # PUT /settings/account
   def update
     @user = current_user
-    @user.update_attributes(params[:user])
-    respond_with(@user) do |format|
-      if @user.errors.any?  
-        format.html { render action: "edit" }
-      else
-        format.html { redirect_to edit_settings_account_path, notice: 'Prop was successfully updated.' }
-      end
+    
+    if @user.update_attributes(params[:user])
+      redirect_to settings_account_path, notice: 'Account was successfully updated.'
+    else
+      render action: "edit"
     end
   end
 end

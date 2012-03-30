@@ -5,10 +5,14 @@ Propapp::Application.routes.draw do
 
   resources :props
   
+  match '/settings/account' => 'settings/accounts#edit', :via => :get
+  match '/settings/password' => 'settings/passwords#edit', :via => :get
+  match '/settings/profile' => 'settings/profiles#edit', :via => :get
+  
   namespace :settings do
-    resource :account, :only => [:edit, :update]
-    resource :password, :only => [:edit, :update]
-    resource :profile, :only => [:edit, :update]
+    resource :account, :only => [:update]
+    resource :password, :only => [:update]
+    resource :profile, :only => [:update]
   end
 
   # The priority is based upon order of creation:

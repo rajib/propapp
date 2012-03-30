@@ -13,14 +13,12 @@
     </div>
 
     <div class="form-actions">
-      <%= f.submit "Update", :class => 'btn btn-primary' %>
-      <%= link_to 'Cancel', :back, :class => 'btn' %>
+      <%= f.submit "Save changes", :class => 'btn btn-primary' %>
+      <%#= link_to 'Cancel', :back, :class => 'btn' %>
     </div>
   </fieldset>
 <% end %>
 
-<h3>Cancel my account</h3>
+<legend>Cancel my account</legend>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(@user), :confirm => "Are you sure?", :method => :delete %>.</p>
-
-<%= link_to "Back", :back %>
+<p><%= link_to "Deactivate", registration_path(@user), :confirm => "Are you sure?", :method => :delete, :class => "btn btn-warning btn-large" %></p>
