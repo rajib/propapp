@@ -1,6 +1,6 @@
-<%= form_for(@profile, :url => settings_password_path, :html => { :method => :put, :class => 'form-horizontal' }) do |f| %>
+<%= form_for(@profile, :url => settings_profile_path, :html => { :method => :put, :class => 'form-horizontal' }) do |f| %>
 
-  <%#= render "shared/error_messages", :target => @profile %>
+  <%= render "shared/error_messages", :target => @profile %>
 
   <fieldset>
     <legend>Profile</legend>

@@ -66,7 +66,7 @@ gem "bson_ext", ">= 1.6.1"
 gem "mongoid", ">= 2.4.6"
 gem "devise", "~> 2.0.0"
 gem "devise_invitable", ">= 1.0.0"
-gem "twitter-bootstrap-rails", ">= 2.0.3", :group => :assets
+gem "twitter-bootstrap-rails", ">= 2.0.3", :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :group => :assets
 gem "rails-footnotes", ">= 3.7", :group => :development
 gem "powder", :group => :development
 gem "git_remote_branch", :group => :development
