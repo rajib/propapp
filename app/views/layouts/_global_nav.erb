@@ -9,9 +9,19 @@
       <%= link_to "Propapp", home_link, :class => "brand" %>
       <div class="container nav-collapse">
         <ul class="nav">
+
           <%= content_tag :li, :class => nav_class(new_user_invitation_path) do -%>
             <%= link_to "Invite", new_user_invitation_path %>
           <% end -%>
+
+          <% if user_signed_in? && current_user.admin? %>
+            <%= content_tag :li do -%>
+              <%= link_to admin_props_path do %>
+                <span class="label label-info">Admin</span>
+              <% end %>
+            <% end -%>
+          <% end %>
+
         </ul>
         <% if user_signed_in? %>
           <%= render :partial => "layouts/account_nav_items" %>

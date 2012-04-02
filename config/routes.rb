@@ -15,6 +15,10 @@ Propapp::Application.routes.draw do
     resource :profile, :only => [:update]
   end
 
+  namespace :admin do 
+    resources :props  
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,24 @@
+<div class="page-header">
+  <h1>Props</h1>
+</div>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @props.each do |prop| %>
+      <tr>
+        <td><%= prop.title %></td>
+        <td>
+          <%= link_to 'Edit', edit_admin_prop_path(prop), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', admin_prop_path(prop), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_admin_prop_path, :class => 'btn btn-primary' %>

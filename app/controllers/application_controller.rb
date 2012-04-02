@@ -6,7 +6,11 @@ class ApplicationController < ActionController::Base
   
   # Overwriting the sign_in redirect path method
   def after_sign_in_path_for(resource_or_scope)
-    props_path
+    if user_signed_in? && current_user.admin?
+      admin_props_path
+    else
+      props_path
+    end
   end
 
    # Overwriting the sign_out redirect path method
