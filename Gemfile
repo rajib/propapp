@@ -40,10 +40,20 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem "cucumber-rails", ">= 1.3.0", :group => :test
-gem "capybara", ">= 1.1.2", :group => :test
-gem "database_cleaner", ">= 0.7.1", :group => :test
-gem "launchy", ">= 2.0.5", :group => :test
+# gem "cucumber-rails", ">= 1.3.0", :group => :test
+# gem "capybara", ">= 1.1.2", :group => :test
+# gem "database_cleaner", ">= 0.7.1", :group => :test
+# gem "launchy", ">= 2.0.5", :group => :test
+
+group :test do
+  gem "cucumber-rails", ">= 1.3.0"
+  gem "capybara", ">= 1.1.2"
+  gem "database_cleaner", ">= 0.7.1"
+  gem "launchy", ">= 2.0.5"
+  gem "shoulda"
+  gem "factory_girl_rails", "~> 3.0"
+end
+
 gem "guard", ">= 0.6.2", :group => :development  # need newline here!
 case HOST_OS
   when /darwin/i
