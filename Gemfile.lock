@@ -192,6 +192,7 @@ GEM
       shoulda-matchers (~> 1.0.0)
     shoulda-context (1.0.0)
     shoulda-matchers (1.0.0)
+    spork (0.9.0)
     sprockets (2.1.2)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -242,6 +243,7 @@ DEPENDENCIES
   rb-fsevent
   sass-rails (~> 3.2.3)
   shoulda
+  spork
   sqlite3
   twitter-bootstrap-rails (>= 2.0.3)!
   uglifier (>= 1.0.3)

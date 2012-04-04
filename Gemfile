@@ -46,12 +46,13 @@ gem 'jquery-rails'
 # gem "launchy", ">= 2.0.5", :group => :test
 
 group :test do
-  gem "cucumber-rails", ">= 1.3.0"
+  gem "cucumber-rails", ">= 1.3.0", require: false
   gem "capybara", ">= 1.1.2"
   gem "database_cleaner", ">= 0.7.1"
   gem "launchy", ">= 2.0.5"
   gem "shoulda"
   gem "factory_girl_rails", "~> 3.0"
+  gem "spork"
 end
 
 gem "guard", ">= 0.6.2", :group => :development  # need newline here!

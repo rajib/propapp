@@ -6,6 +6,10 @@ test:
   host: localhost
   database: propapp_test
 
+cucumber:
+  host: localhost
+  database: propapp_test
+
 # set these environment variables on your prod server
 production:
   host: <%= ENV['MONGOID_HOST'] %>
