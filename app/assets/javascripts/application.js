@@ -14,3 +14,28 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+
+$(function(){
+	// fix custom-subnav on scroll
+	var $win = $(window)
+	, $nav = $('.custom-subnav')
+	, navTop = $('.custom-subnav').length && $('.custom-subnav').offset().top - 40
+	, isFixed = 0
+
+	processScroll()
+
+	$win.on('scroll', processScroll)
+
+	function processScroll() {
+		var i, scrollTop = $win.scrollTop()
+		if (scrollTop >= navTop && !isFixed) {
+			isFixed = 1
+			$nav.addClass('custom-subnav-fixed')
+		} else if (scrollTop <= navTop && isFixed) {
+			isFixed = 0
+			$nav.removeClass('custom-subnav-fixed')
+		}
+	}
+})
+

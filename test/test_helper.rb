@@ -5,4 +5,12 @@ require 'shoulda'
 
 class ActiveSupport::TestCase
   include Devise::TestHelpers
+  
+  def setup
+    DatabaseCleaner.start
+  end
+  
+  def teardown
+    DatabaseCleaner.clean
+  end
 end

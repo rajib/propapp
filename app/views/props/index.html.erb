@@ -1,17 +1,22 @@
-<div class="page-header">
-  <h1>Props</h1>
-</div>
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Title</th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="awards">
+  <header class="jumbotron subhead" id="overview">
+    <h1>Props Available</h1>
+    <%= render :partial => "subnav" %>
+  </header>
+  <hr>
+  <div class="row">
     <% @props.each do |prop| %>
-      <tr>
-        <td><%= link_to prop.title, prop_path(prop) %></td>
-      </tr>
+      <div class="span3">
+        <%= link_to prop_path(prop) do %>
+          <div class="well">
+            <h2><%= prop.title %></h2>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
+
+
+
+
