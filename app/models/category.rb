@@ -3,5 +3,5 @@ class Category
   field :title, :type => String
   field :description, :type => String
 
-  belongs_to :prop
+  has_many :props
 end

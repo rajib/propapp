@@ -2,7 +2,8 @@ class Prop
   include Mongoid::Document
   field :title, :type => String
   field :description, :type => String
-  field :category_id, :type => Integer
+  field :point, :type => Integer
+  field :category_id
 
-  has_one :category
+  belongs_to :category
 end
