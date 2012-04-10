@@ -4,7 +4,7 @@
     <%= render :partial => "subnav" %>
   </header>
   <hr>
-  <div id="grid-original" class="row">
+  <div class="row">
     <% @props.each do |prop| %>
       <div class="span3">
         <%= link_to prop_path(prop) do %>
