@@ -1,9 +1,19 @@
 class PropsController < ApplicationController
-  before_filter :authenticate_user!
+  # before_filter :authenticate_user!
+  respond_to :html, :json
   
   # GET /props
   def index
-    @props = Prop.all
+    @categories = Category.all
+    
+    @props = if params[:category]  
+      category = Category.find_by_title(params[:category])
+      category.props
+    else
+      Prop.all
+    end
+    
+    respond_with(@props)
   end
 
   # GET /props/1

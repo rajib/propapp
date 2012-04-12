@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+//= require jquery.address-1.4.min
+//= require handlebars-1.0.0.beta.6
 
 
 $(function(){
@@ -37,5 +39,40 @@ $(function(){
 			$nav.removeClass('custom-subnav-fixed')
 		}
 	}
-})
+});
+
+// props
+$.address.state('/');
+
+$.address.change(function(e) {
+	// if($.isEmptyObject(e.parameters))
+	// return;
+	
+	$('#loading').slideToggle('fast', function() {
+		$.ajax({
+			url: e.path,
+			dataType: 'json',
+			data: e.parameters,
+			success: function(json) {
+				// templating stuffs
+				Handlebars.registerHelper('link_to', function(prop) {
+					return "<a href='/props/" + prop._id + "'>" + prop.title + "</a>";
+				});
+				var source   = $("#PropTemplate").html();
+				var template = Handlebars.compile(source);
+				$("#PropContainer").html(template(json));
+				// end
+				$('#loading').slideToggle('fast');
+			}
+		})
+	});
+
+	console.log("address triggered!!");
+
+	$('.custom-subnav ul li ul li a').live('click', function() {
+		var href = $(this).attr('href');
+		$.address.value(href);
+		return false;
+	})
+});
 
