@@ -18,61 +18,54 @@
 //= require handlebars-1.0.0.beta.6
 
 
-$(function(){
-	// fix custom-subnav on scroll
-	var $win = $(window)
-	, $nav = $('.custom-subnav')
-	, navTop = $('.custom-subnav').length && $('.custom-subnav').offset().top - 40
-	, isFixed = 0
+$(function () {
+    // fix custom-subnav on scroll
+    var $win = $(window),
+        $nav = $('.custom-subnav'),
+        navTop = $('.custom-subnav').length && $('.custom-subnav').offset().top - 40,
+        isFixed = 0
 
-	processScroll()
+        processScroll()
 
-	$win.on('scroll', processScroll)
+        $win.on('scroll', processScroll)
 
-	function processScroll() {
-		var i, scrollTop = $win.scrollTop()
-		if (scrollTop >= navTop && !isFixed) {
-			isFixed = 1
-			$nav.addClass('custom-subnav-fixed')
-		} else if (scrollTop <= navTop && isFixed) {
-			isFixed = 0
-			$nav.removeClass('custom-subnav-fixed')
-		}
-	}
+        function processScroll() {
+            var i, scrollTop = $win.scrollTop()
+            if (scrollTop >= navTop && !isFixed) {
+                isFixed = 1
+                $nav.addClass('custom-subnav-fixed')
+            } else if (scrollTop <= navTop && isFixed) {
+                isFixed = 0
+                $nav.removeClass('custom-subnav-fixed')
+            }
+        }
 });
 
 // props
 $.address.state('/');
 
-$.address.change(function(e) {
-	// if($.isEmptyObject(e.parameters))
-	// return;
-	
-	$('#loading').slideToggle('fast', function() {
-		$.ajax({
-			url: e.path,
-			dataType: 'json',
-			data: e.parameters,
-			success: function(json) {
-				// templating stuffs
-				Handlebars.registerHelper('link_to', function(prop) {
-					return "<a href='/props/" + prop._id + "'>" + prop.title + "</a>";
-				});
-				var source   = $("#PropTemplate").html();
-				var template = Handlebars.compile(source);
-				$("#PropContainer").html(template(json));
-				// end
-				$('#loading').slideToggle('fast');
-			}
-		})
-	});
+$.address.change(function (e) {
+    // if($.isEmptyObject(e.parameters))
+    // return;
 
-	console.log("address triggered!!");
-
-	$('.custom-subnav ul li ul li a').live('click', function() {
-		var href = $(this).attr('href');
-		$.address.value(href);
-		return false;
-	})
+    $('#loading').slideToggle('fast', function () {
+        $.ajax({
+            url: e.path,
+            dataType: 'html',
+            data: e.parameters,
+            success: function (html) {
+								$('#YieldContainer').html(html);
+                $('#loading').slideToggle('fast');
+            }
+        })
+    });
+		
+		$('.custom-subnav ul li ul li a').live('click', function () {
+		    var href = $(this).attr('href');
+		    $.address.value(href);
+		    return false;
+		});
 });
+
+
 

@@ -6,14 +6,16 @@ class PropsController < ApplicationController
   def index
     @categories = Category.all
     
-    @props = if params[:category]  
-      category = Category.find_by_title(params[:category])
-      category.props
-    else
-      Prop.all
-    end
+    # if request.xhr?
+      @props = if params[:category]  
+        category = Category.find_by_title(params[:category])
+        category.props
+      else
+        Prop.all
+      end
+    # end
     
-    respond_with(@props)
+    render :layout => false if request.xhr?
   end
 
   # GET /props/1

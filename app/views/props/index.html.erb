@@ -6,21 +6,17 @@
   <hr>
   <div class="row" id="PropContainer">
     <!-- PropTemplate -->
+    <% @props.each do |prop| %>
+    <div class="span3">
+      <div class="well">
+        <h2><%= link_to prop.title, prop %></h2>
+        <h6><%= "#{prop.point} point" %></h6>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>
 
 
-<script id="PropTemplate" type="text/x-handlebars-template">
-  {{#each this}}
-    <div class="span3">
-      <div class="well">
-        <h2>{{{link_to this}}}</h2>
-        <h6>8 point</h6>
-      </div>
-    </div>
-  {{/each}}
-</script>
 
 
-
-<div id="loading" style="display: none; ">Loading...</div>

@@ -28,7 +28,7 @@
       <div class="content">
         <%= render :partial => "layouts/flash_messages" %>
         <div class="row">
-          <div class="span12">
+          <div class="span12" id="YieldContainer">
             <%= yield %>
           </div><!--/span-->
         </div><!--/row-->
@@ -38,7 +38,9 @@
         <p>&copy; <%= t(:copyright_name) %></p>
       </footer>
     </div> <!-- /container -->
-
+    
+    <div id="loading" style="display: none; ">Loading...</div>
+    
     <!-- Le javascript ============================================ -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
