@@ -1,5 +1,5 @@
-class Category
-  include Mongoid::Document
+class Category < ActiveRecord::Base
+	
   field :title, :type => String
   field :description, :type => String
 

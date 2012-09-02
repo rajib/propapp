@@ -42,30 +42,30 @@ $(function () {
 });
 
 // props
-$.address.state('/');
+// $.address.state('/');
 
-$.address.change(function (e) {
-    // if($.isEmptyObject(e.parameters))
-    // return;
+// $.address.change(function (e) {
+//     // if($.isEmptyObject(e.parameters))
+//     // return;
 
-    $('#loading').slideToggle('fast', function () {
-        $.ajax({
-            url: e.path,
-            dataType: 'html',
-            data: e.parameters,
-            success: function (html) {
-								$('#YieldContainer').html(html);
-                $('#loading').slideToggle('fast');
-            }
-        })
-    });
+//     $('#loading').slideToggle('fast', function () {
+//         $.ajax({
+//             url: e.path,
+//             dataType: 'html',
+//             data: e.parameters,
+//             success: function (html) {
+// 								$('#YieldContainer').html(html);
+//                 $('#loading').slideToggle('fast');
+//             }
+//         })
+//     });
 		
-		$('.custom-subnav ul li ul li a').live('click', function () {
-		    var href = $(this).attr('href');
-		    $.address.value(href);
-		    return false;
-		});
-});
+// 		$('.custom-subnav ul li ul li a').live('click', function () {
+// 		    var href = $(this).attr('href');
+// 		    $.address.value(href);
+// 		    return false;
+// 		});
+// });
 
 
 

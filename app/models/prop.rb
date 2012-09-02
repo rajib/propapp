@@ -1,5 +1,4 @@
-class Prop
-  include Mongoid::Document
+class Prop < ActiveRecord::Base
   
   field :title, :type => String
   field :description, :type => String

@@ -8,7 +8,7 @@ gem 'rails', '3.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'mysql2'
 
 
 # Gems used only for assets and not required
@@ -73,9 +73,6 @@ gem "guard-bundler", ">= 0.1.3", :group => :development
 gem "guard-rails", ">= 0.0.3", :group => :development
 gem "guard-livereload", ">= 0.3.0", :group => :development
 gem "guard-cucumber", ">= 0.6.1", :group => :development
-gem "bson_ext", ">= 1.6.1"
-gem "mongoid", ">= 2.4.6"
-gem "mongoid_dynamic_finder"
 gem "devise", "~> 2.0.0"
 gem "devise_invitable", ">= 1.0.0"
 gem "twitter-bootstrap-rails", ">= 2.0.3", :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :group => :assets

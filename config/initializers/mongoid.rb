@@ -1,1 +1,0 @@
-Mongoid.load!(File.open("#{Rails.root}/config/mongoid.yml"))
